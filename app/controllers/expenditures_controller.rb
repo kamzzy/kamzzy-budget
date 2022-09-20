@@ -7,7 +7,11 @@ class ExpendituresController < ApplicationController
   end
 
   # GET /expenditures/1 or /expenditures/1.json
+  # def show
+  # end
   def show
+    @expenditure = Expenditure.find(params[:id])
+    @groups = @expenditure.groups
   end
 
   # GET /expenditures/new
