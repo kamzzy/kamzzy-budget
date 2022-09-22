@@ -21,10 +21,11 @@ class ExpendituresController < ApplicationController
     @expenditure = @group.expenditures.new(expenditure_params)
     @expenditure.user_id = @user.id
 
-
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to user_group_expenditures_path(@user, @group), notice: "Expenditure was successfully created." }
+        format.html do
+          redirect_to user_group_expenditures_path(@user, @group), notice: 'Expenditure was successfully created.'
+        end
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -32,19 +33,21 @@ class ExpendituresController < ApplicationController
       end
     end
   end
+
   # DELETE /expenditures/1 or /expenditures/1.json
   def destroy
     @expenditure.destroy
 
     respond_to do |format|
-      format.html { redirect_to expenditures_url, notice: "Expenditure was successfully destroyed." }
+      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-      # Only allow a list of trusted parameters through.
-    def expenditure_params
-      params.require(:expenditure).permit!
-    end
+
+  # Only allow a list of trusted parameters through.
+  def expenditure_params
+    params.require(:expenditure).permit!
+  end
 end

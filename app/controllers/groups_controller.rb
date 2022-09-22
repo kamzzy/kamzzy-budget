@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   # def show
   #   @group = Group.find(params[:id])
   #   @expenditure = Expenditure.find(params[group_id: @group.id])
-    
+
   # end
 
   def new
@@ -45,6 +45,7 @@ class GroupsController < ApplicationController
   end
 
   private
+
   # Only allow a list of trusted parameters through.
   def group_params
     params.require(:group).permit!
