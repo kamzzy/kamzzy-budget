@@ -13,9 +13,7 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe 'Groups', type: :request do
-
   describe 'User requests' do
-
     it 'renders the index template' do
       user = FactoryBot.create(:user)
       user.save

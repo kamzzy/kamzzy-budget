@@ -13,7 +13,6 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe 'Expendetiures', type: :request do
-
   describe 'Expenditures' do
     it 'renders all groups expendeiture' do
       user = FactoryBot.create(:user)

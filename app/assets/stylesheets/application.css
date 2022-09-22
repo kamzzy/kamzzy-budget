@@ -13,157 +13,158 @@
  *= require_tree .
  *= require_self
  */
- body{
+body {
   font-family: proxima-nova, sans-serif;
- }
- .header-div {
+}
+
+.header-div {
   display: flex;
   justify-content: center;
   background-color: #3778c2;
- }
+}
 
-  .header-div h1 {
-    font-size: 50px;
-    text-shadow: 2px 2px 4px #000000;
-    color: #fff;
-  }
+.header-div h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000;
+  color: #fff;
+}
 
- .container,
- #expenditures {
+.container,
+#expenditures {
   display: flex;
   flex-direction: column;
   justify-content: center;
- }
+}
 
- .group-display {
+.group-display {
   margin-bottom: 2%;
   display: flex;
   flex-direction: column;
   background-color: rgb(242, 242, 242);
   padding: 0.5%;
- }
+}
 
- .group-list {
+.group-list {
   border: solid 3px rgb(223, 222, 222);
   border-bottom: transparent;
   display: grid;
   grid-template-columns: auto auto auto auto;
   background-color: white;
   padding: 12px 24px 0 12px;
- }
+}
 
-
- .group-display img {
+.group-display img {
   width: 15rem;
   height: 6rem;
- }
+}
 
- .group-name {
+.group-name {
   grid-column-start: 2;
   grid-column-end: 4;
   padding: 5% 0 0 0;
   font-size: 24px;
- }
+}
 
- .date {
- display: inline-block;
- text-align: center;
- border-bottom: solid 3px rgb(223, 222, 222);
- border-left: solid 3px rgb(223, 222, 222);
+.date {
+  display: inline-block;
+  text-align: center;
+  border-bottom: solid 3px rgb(223, 222, 222);
+  border-left: solid 3px rgb(223, 222, 222);
   border-right: solid 3px rgb(223, 222, 222);
   background-color: white;
   padding: 0 0 12px 24px;
- }
+}
 
- .new-form {
+.new-form {
   display: flex;
   justify-content: center;
   padding: 2% 0;
+
   /* border: solid 3px rgb(223, 222, 222); */
   background-color: #5fb523;
- }
+}
 
- .new-form span {
+.new-form span {
   border: solid 1px white;
   padding: 1% 30%;
- }
+}
 
- .new-form span a {
+.form-span a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: proxima-nova, sans-serif;
+}
+
+.sign-link a {
+  text-decoration: none;
+}
+
+.new-form span a {
   color: white;
   text-decoration: none;
- }
+}
 
- .expense-display {
+.expense-display {
   margin-bottom: 2%;
   display: flex;
- font-size: 18px ;
+  font-size: 18px;
   background-color: rgb(242, 242, 242);
   padding: 0.5%;
   justify-content: center;
- }
+}
 
- .expense-amount {
+.expense-amount {
   padding: 0 0 0 20%;
- }
+}
 
- .total {
-    display: flex;
-    justify-content: end;
-    padding: 2% 12% 2% 0;
-    font-size: 18px;
-    border: solid 3px rgb(223, 222, 222);
-  }
+.total {
+  display: flex;
+  justify-content: end;
+  padding: 2% 12% 2% 0;
+  font-size: 18px;
+  border: solid 3px rgb(223, 222, 222);
+}
 
-  .total span {
-    padding: 0 12% 0 0;
-  }
+.total span {
+  padding: 0 12% 0 0;
+}
 
-  .form {
-    display: flex;
-    justify-content: center;
- 
-  }
-  .form form {
-    padding: 5%;
-    border: solid 3px rgb(223, 222, 222);
-  }
+.form {
+  display: flex;
+  justify-content: center;
+}
 
-  .form form input {
-    width: 24rem;
-    height: 4rem;
-    margin: 0.5% 0;
-    border: solid 3px rgb(223, 222, 222);
-    font-size: 18px;
-    font-family: proxima-nova, sans-serif;
-  }
+.form form {
+  padding: 5%;
+  border: solid 3px rgb(223, 222, 222);
+}
 
-  .form form input[type="submit"] {
-    background-color: #5fb523;
-    color: white;
-    width: 24.5rem;
-  }
+.form form input {
+  width: 24rem;
+  height: 4rem;
+  margin: 0.5% 0;
+  border: solid 3px rgb(223, 222, 222);
+  font-size: 18px;
+  font-family: proxima-nova, sans-serif;
+}
 
-  .user {
-    display: flex;
-    justify-content: center;
-  }
+.form form input[type="submit"] {
+  background-color: #5fb523;
+  color: white;
+  width: 24.5rem;
+}
 
-  .sign-link {
-    padding: 5%;
-    border: solid 3px rgb(223, 222, 222);
-    font-size: 18px;
-    font-family: proxima-nova, sans-serif;
-    margin: 5%;
-  }
+.user {
+  display: flex;
+  justify-content: center;
+}
 
-  .sign-link a {
-    text-decoration: none;
-  }
-
-  .form-span a {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: proxima-nova, sans-serif;
-  }
+.sign-link {
+  padding: 5%;
+  border: solid 3px rgb(223, 222, 222);
+  font-size: 18px;
+  font-family: proxima-nova, sans-serif;
+  margin: 5%;
+}
