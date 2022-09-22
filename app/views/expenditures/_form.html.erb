@@ -1,22 +1,16 @@
-<%= form_with(model: expenditure) do |form| %>
-  <% if expenditure.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
-
-      <ul>
-        <% expenditure.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="form">
+<%= form_with model: [@user, @group, @expenditure] do |form| %>
 
   <div>
-    <%= form.label :group, style: "display: block" %>
-    <%= form.text_field :group %>
+    <%= form.text_field :name, placeholder: "Expense Name" %>
   </div>
 
+  <div>
+    <%= form.number_field :amount, placeholder: "Expense Amount" %>
+  </div>
+  <%= form.hidden_field :group_id, value: @group.id %>
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+</div>
