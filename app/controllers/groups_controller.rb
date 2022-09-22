@@ -7,11 +7,9 @@ class GroupsController < ApplicationController
     @expenditures = Expenditure.where(group_id: @groups.ids)
   end
 
-  # def show
-  #   @group = Group.find(params[:id])
-  #   @expenditure = Expenditure.find(params[group_id: @group.id])
-
-  # end
+  def show
+    @expenditure = Expenditure.all.where(group_id: @group.id)
+  end
 
   def new
     @user = User.find(params[:user_id])
