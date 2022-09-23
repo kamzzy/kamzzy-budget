@@ -8,7 +8,7 @@
  </h1>
  <div class="all-expense">
  <div class="total"> <span class="expense">Expenditures </span>
- <span> <%= number_to_currency(@total) %> </span>
+ <span> <%= number_to_currency(@expenditures.sum(:amount)) %> </span>
  </div>
   <% @expenditures.each do |expenditure| %>
   <%= render expenditure %>
