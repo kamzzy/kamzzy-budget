@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_group, only: %i[ show edit update destroy ]
 
   def index
     @user = current_user
@@ -8,11 +9,13 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @expenditure = Expenditure.all.where(group_id: @group.id)
+    # @user = current_user.id
+    # @group = Group.find_by(id: params[:id])
+    @expenditures = Expenditure.all.where(group_id: @group.id)
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id]) 
     @group = Group.new
   end
 
@@ -43,6 +46,10 @@ class GroupsController < ApplicationController
   end
 
   private
+
+  def set_group
+    @group = Group.find(params[:id])
+  end
 
   # Only allow a list of trusted parameters through.
   def group_params

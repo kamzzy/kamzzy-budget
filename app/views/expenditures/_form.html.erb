@@ -1,5 +1,5 @@
 <div class="form">
-<%= form_with model: [@user, @group, @expenditure] do |form| %>
+<%= form_with model: [@user, @expenditure] do |form| %>
 
   <div>
     <%= form.text_field :name, placeholder: "Expense Name" %>
@@ -8,7 +8,8 @@
   <div>
     <%= form.number_field :amount, placeholder: "Expense Amount" %>
   </div>
-  <%= form.hidden_field :group_id, value: @group.id %>
+  <div class="select">
+  <%= form.select(:group_id, @group) %>
   <div>
     <%= form.submit %>
   </div>

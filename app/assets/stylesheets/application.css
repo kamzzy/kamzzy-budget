@@ -94,7 +94,6 @@ body {
   justify-content: center;
   text-decoration: none;
   font-size: 18px;
-  font-family: proxima-nova, sans-serif;
 }
 
 .sign-link a {
@@ -141,13 +140,13 @@ body {
   border: solid 3px rgb(223, 222, 222);
 }
 
-.form form input {
+.form form input,
+.form form select {
   width: 24rem;
   height: 4rem;
   margin: 0.5% 0;
   border: solid 3px rgb(223, 222, 222);
   font-size: 18px;
-  font-family: proxima-nova, sans-serif;
 }
 
 .form form input[type="submit"] {
@@ -157,14 +156,33 @@ body {
 }
 
 .user {
-  display: flex;
-  justify-content: center;
+  border: solid 3px rgb(223, 222, 222);
+  margin: 1%;
+  
 }
 
-.sign-link {
-  padding: 5%;
-  border: solid 3px rgb(223, 222, 222);
-  font-size: 18px;
-  font-family: proxima-nova, sans-serif;
-  margin: 5%;
+.user a {
+  text-decoration: none;
 }
+
+.appname {
+ text-align: center;
+ margin: 10rem 0;
+ font-size: 50px;
+}
+.signin {
+  background-color: #3778c2;
+  text-align: center;
+  font-size: 18px;
+  padding: 2% 0;
+}
+
+.signin a {
+  color: white;
+}
+.signout {
+  text-align: center;
+  font-size: 18px;
+  padding: 2% 0;
+}
+

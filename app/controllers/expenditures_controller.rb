@@ -10,21 +10,21 @@ class ExpendituresController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @group = Group.find(params[:group_id])
-    @expenditure = @group.expenditures.new
+    @user = current_user
+    @expenditure = Expenditure.new
+    @group = Group.all.where(user_id: @user.id).map { |g| [g.name, g.id] }
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @group = Group.find(params[:group_id])
-    @expenditure = @group.expenditures.new(expenditure_params)
-    @expenditure.user_id = @user.id
+    # @user = current_user
+    # @group = Group.find(params[user_id: @user.id])
+    @expenditure = Expenditure.new(expenditure_params)
+    @expenditure.user_id = current_user.id
 
     respond_to do |format|
       if @expenditure.save
         format.html do
-          redirect_to user_group_expenditures_path(@user, @group), notice: 'Expenditure was successfully created.'
+          redirect_to user_group_url(current_user.id, @expenditure.group_id), notice: 'Expenditure was successfully created.'
         end
         format.json { render :show, status: :created, location: @group }
       else
