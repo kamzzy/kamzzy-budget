@@ -19,8 +19,8 @@ RSpec.describe 'Expendetiures', type: :request do
       group = FactoryBot.create(:group, user_id: user.id)
       user.save
       login_as(user, scope: :user)
-      get "/users/#{user.id}/groups/#{group.id}/expenditures"
-      expect(response).to render_template('index')
+      get "/users/#{user.id}/groups/#{group.id}"
+      expect(response).to render_template('show')
     end
   end
 end
