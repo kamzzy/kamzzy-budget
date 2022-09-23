@@ -24,7 +24,8 @@ class ExpendituresController < ApplicationController
     respond_to do |format|
       if @expenditure.save
         format.html do
-          redirect_to user_group_url(current_user.id, @expenditure.group_id), notice: 'Expenditure was successfully created.'
+          redirect_to user_group_url(current_user.id, @expenditure.group_id),
+                      notice: 'Expenditure was successfully created.'
         end
         format.json { render :show, status: :created, location: @group }
       else
