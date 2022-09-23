@@ -37,7 +37,7 @@ body {
 }
 
 .group-display {
-  margin-bottom: 2%; 
+  margin-bottom: 2%;
   display: flex;
   flex-direction: column;
   background-color: rgb(223, 222, 222);
@@ -69,6 +69,7 @@ body {
 .group-name a {
   text-decoration: none;
 }
+
 .date {
   display: inline-block;
   text-align: center;
@@ -91,11 +92,19 @@ body {
   padding: 1% 30%;
 }
 
+.signin a {
+  color: white;
+}
+
 .form-span a {
   display: flex;
   justify-content: center;
   text-decoration: none;
   font-size: 18px;
+}
+
+.user a {
+  text-decoration: none;
 }
 
 .sign-link a {
@@ -161,18 +170,14 @@ body {
 .user {
   border: solid 3px rgb(223, 222, 222);
   margin: 1%;
-  
-}
-
-.user a {
-  text-decoration: none;
 }
 
 .appname {
- text-align: center;
- margin: 10rem 0;
- font-size: 50px;
+  text-align: center;
+  margin: 10rem 0;
+  font-size: 50px;
 }
+
 .signin {
   background-color: #3778c2;
   text-align: center;
@@ -180,12 +185,8 @@ body {
   padding: 2% 0;
 }
 
-.signin a {
-  color: white;
-}
 .signout {
   text-align: center;
   font-size: 18px;
   padding: 2% 0;
 }
-
