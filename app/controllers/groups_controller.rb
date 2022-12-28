@@ -45,6 +45,21 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @group = Group.find(params[:id])
+    respond_to do |format|
+      if @group.update(group_params)
+        format.html { redirect_to user_groups_path(@user), notice: 'Group was successfully updated.' }
+      end
+    end
+  end
+
   private
 
   def set_group

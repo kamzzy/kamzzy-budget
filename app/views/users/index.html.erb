@@ -1,7 +1,15 @@
+<div class="user-head">
 <div id="users" class="user container">
+<% if user_signed_in? %>
+<h1 class="appname"> Kamzzy Budget </h1>
+<% else %>
+<h1 class="appname"> Kamzzy Budget </h1>
 <div class="row">
-      <h1 class="appname col-12"> Kamzzy Budget </h1>
-      <div class="signin col-12"> <strong> <%= link_to 'Sign In', new_user_session_path %> </strong> </div> 
-      <div class="signout col-12"> <strong> <%= link_to 'Sign Up', new_user_registration_path %> </strong> </div>
+      
+      <div class="signin col-6"> <strong> <%= link_to 'Sign In', new_user_session_path %> </strong> </div> 
+      <div class="signout col-6"> <strong> <%= link_to 'Sign Up', new_user_registration_path %> </strong> </div>
+</div>
+<% end %>
 </div>
 </div>
+

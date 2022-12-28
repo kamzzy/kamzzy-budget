@@ -1,0 +1,36 @@
+ <% if user_signed_in? %>
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+  <%= link_to "Budget", user_groups_path(current_user, @group), class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Home", user_groups_path(current_user, @group), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Category', new_user_group_path(current_user, @group), class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= link_to 'Expenditure', new_user_expenditure_path(current_user, @expenditure), class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User
+          </a>
+          <ul class="dropdown-menu profile">
+            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+            <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "profile-signout" %></li>
+          </ul>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<% else %>
+  <span></span>
+ <% end %> 

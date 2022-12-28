@@ -1,11 +1,11 @@
 <div id="expenditures">
 
 <h1> <%= link_to user_groups_path do %>
- <i class="fa-solid fa-chevron-left" style="color: #3778c2; padding-left: 22px"> </i>
+ <i class="fa-solid fa-chevron-left" style="color: #03264e; padding-left: 22px"> </i>
  <% end %>
  </h1>
  <div class="all-expense">
- <div class="total"> <span class="expense">Expenditures </span>
+ <div class="total"> <span class="expense">Expenditure </span>
  <span> <%= number_to_currency(@total) %> </span>
  </div>
   <% @expenditures.each do |expenditure| %>

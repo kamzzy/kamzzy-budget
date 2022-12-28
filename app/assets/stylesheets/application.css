@@ -15,12 +15,13 @@
  */
 body {
   font-family: proxima-nova, sans-serif;
+  overflow: hidden;
 }
 
 .header-div {
   display: flex;
   justify-content: center;
-  background-color: #3778c2;
+  background-color: #03264e;
 }
 
 .header-div h1 {
@@ -34,61 +35,67 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #03264e !important;
 }
 
-.group-display {
+.group-display,
+.expense-display {
   margin-bottom: 2%;
-  display: flex;
-  flex-direction: column;
+  border: solid 3px rgb(223, 222, 222);
   background-color: rgb(223, 222, 222);
   padding: 0.5%;
 }
 
-.group-list {
-  border: solid 3px rgb(223, 222, 222);
-  border-bottom: transparent;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  background-color: white;
+.group-display img {
+  width: 10rem;
+  height: 8rem;
 }
 
-.group-display img {
-  width: 15rem;
-  height: 6rem;
-}
 
 .group-name {
-  grid-column-start: 2;
-  grid-column-end: 4;
   padding: 5% 0 0 0;
-  font-size: 24px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .group-name a {
   text-decoration: none;
+  font-size: 24px;
+  color: #03264e;
+  text-transform: capitalize;
 }
 
 .date {
-  display: inline-block;
-  text-align: center;
-  border-bottom: solid 3px rgb(223, 222, 222);
-  border-left: solid 3px rgb(223, 222, 222);
-  border-right: solid 3px rgb(223, 222, 222);
-  background-color: white;
-  padding: 0 0 12px 24px;
+  display: flex;
+  justify-content: flex-end;
+  font-style: italic;
+  font-weight: bold;
 }
 
+.group-amount {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 24px;
+  padding: 5%;
+}
+
+.group-edit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.group-edit a {
+  text-decoration: none;
+  color: #03264e;
+  font-style: italic;
+  font-weight: bold;
+}
 .new-form {
   display: flex;
   justify-content: center;
   padding: 2% 0;
-  background-color: #5fb523;
+  background-color: #03264e;
 }
 
 .new-form span {
-  border: solid 1px white;
   padding: 1% 30%;
 }
 
@@ -116,30 +123,21 @@ body {
   text-decoration: none;
 }
 
-.expense-display {
-  margin-bottom: 2%;
-  display: flex;
-  font-size: 18px;
-  background-color: rgb(242, 242, 242);
-  padding: 1% 15%;
-  justify-content: space-between;
-}
-
 .expense-amount {
-  padding: 0 0 0 20%;
+  padding: 0 5% 0 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .total {
-  display: flex;
-  justify-content: space-between;
-  padding: 2% 15%;
-  border: solid 3px rgb(223, 222, 222);
+  padding: 0 5% 2% 5%;
   font-size: 18px;
   font-weight: bold;
 }
 
-.total span {
-  padding: 0 12% 0 0;
+.h3-two {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form {
@@ -162,31 +160,89 @@ body {
 }
 
 .form form input[type="submit"] {
-  background-color: #5fb523;
+  background-color: #03264e;
   color: white;
   width: 24.5rem;
 }
 
-.user {
-  border: solid 3px rgb(223, 222, 222);
-  margin: 1%;
+.user-head {
+  background: url("https://res.cloudinary.com/wonderwoman/image/upload/v1672039696/myportfolio/kamzzy-budget/Budget-transformed_1_gkz8ya.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  padding: 10%;
+  border: solid 3px #03264e;
+  border-radius: 20% 0;
 }
 
 .appname {
   text-align: center;
-  margin: 10rem 0;
-  font-size: 50px;
+  padding: 5rem 0;
+  font-size: 100px;
+  font-weight: 600;
+  color: #03264e;
 }
 
 .signin {
-  background-color: #3778c2;
+  background-color: #03264e;
   text-align: center;
-  font-size: 18px;
+  font-size: 28px;
   padding: 2% 0;
+  margin-top: 5%;
 }
 
 .signout {
   text-align: center;
-  font-size: 18px;
+  font-size: 28px;
   padding: 2% 0;
+  background-color: #fff;
+  margin-top: 5%;
+}
+
+.signout a {
+  color: #03264e;
+}
+
+.navbar {
+  background-color: #03264e;
+  padding: 2% 5%;
+}
+
+.container-fluid a {
+  color: #fff !important;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  background-color: #03264e;
+}
+
+.navbar-toggler {
+  background-color: #fff;
+}
+
+.profile-signout {
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  color: #fff;
+}
+
+.profile li:hover {
+  background-color: #fff !important;
+}
+.profile li a:hover,
+.profile li button:hover {
+  color: #03264e !important;
+  background-color: #fff !important;
 }

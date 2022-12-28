@@ -1,21 +1,21 @@
-<div id="expenditures">
-<div class="header-div">
-   <h1 class="header"> Expenditures </h1>
-</div>
+<div id="expenditures" class="container">
 <h1> <%= link_to user_groups_path do %>
- <i class="fa-solid fa-chevron-left" style="color: #3778c2; padding-left: 22px"> </i>
+ <i class="fa-solid fa-chevron-left" style="color: #03264e; padding-left: 22px"> </i>
  <% end %>
  </h1>
  <div class="all-expense">
- <div class="total"> <span class="expense">Expenditures </span>
- <span> <%= number_to_currency(@expenditures.sum(:amount)) %> </span>
- </div>
-  <% @expenditures.each do |expenditure| %>
-  <%= render expenditure %>
-  <% end %>
+    <div class="total row"> 
+        <h3 class="expense col-6 h3-one">Total Expenditures </h3>
+        <h3 class="col-6 h3-two"> 
+        <%= number_to_currency(@expenditures.sum(:amount)) %>
+        </h3>
+    </div>
+    <% @expenditures.each do |expenditure| %>
+    <%= render expenditure %>
+    <% end %>
     <div class="new-form"> 
-   <span> <%= link_to 'New Expenditure', new_user_expenditure_path %> </span>
-  </div>
+      <span> <%= link_to 'New Expenditure', new_user_expenditure_path %> </span>
+    </div>
   </div>
 </div>
 

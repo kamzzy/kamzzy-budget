@@ -2,14 +2,14 @@
 <%= form_with model: [@user, @group] do |form| %>
 
   <div>
-    <%= form.text_field :name, placeholder: "Group Name" %>
+    <%= form.text_field :name, placeholder: "Expense Category Name" %>
   </div>
 
   <div>
-    <%= form.text_field :icon, placeholder: "Group Icon" %>
+    <%= form.text_field :icon, placeholder: "Expense Category Icon" %>
   </div>
   <div>
-    <%= form.submit %>
+    <%= form.submit("Create Category") %>
   </div>
 <% end %>
 </div>

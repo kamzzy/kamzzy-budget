@@ -1,6 +1,7 @@
 class ExpendituresController < ApplicationController
   before_action :authenticate_user!
 
+ 
   # GET /expenditures or /expenditures.json
   def index
     @user = current_user
@@ -44,7 +45,22 @@ class ExpendituresController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def edit
+    @user = User.find(params[:user_id])
+    @expenditure = Expenditure.find(params[:id])
+    @group = Group.all.where(user_id: @user.id).map { |g| [g.name, g.id] }
+  end
 
+  def update
+    @user = User.find(params[:user_id])
+    @expenditure = Expenditure.find(params[:id])
+    respond_to do |format|
+      if @expenditure.update(expenditure_params)
+        format.html { redirect_to user_groups_path(@user), notice: 'expenditure was successfully updated.' }
+      end
+    end
+  end
   private
 
   # Only allow a list of trusted parameters through.

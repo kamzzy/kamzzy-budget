@@ -1,21 +1,17 @@
-<div class="header-div">
-   <h1 class="header"> Expenditures </h1>
-</div>
 <div id="groups" class="container">
 <% if user_signed_in? %>
  <div class="grouping">
- <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
 
  <div class="total row">
-    <h3 col-6> Expenditures</h3>
-    <h3 col-6><%= number_to_currency(@expenditures.sum(&:amount)) %> </h3>
+    <h3 class="col-6 h3-one">Total Expenditures</h3>
+    <h3 class="col-6 h3-two"><%= number_to_currency(@expenditures.sum(&:amount)) %> </h3>
  </div>
  
   <% @groups.each do |group| %>
   <%= render group %>
   <% end %> 
   <div class="new-form"> 
-   <span> <%= link_to 'New Group', new_user_group_path %> </span>
+   <span> <%= link_to 'New Category', new_user_group_path %> </span>
   </div>
 </div>
  <% else %>
