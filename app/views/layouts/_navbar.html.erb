@@ -1,7 +1,9 @@
  <% if user_signed_in? %>
 <nav class="navbar navbar-expand-md">
   <div class="container-fluid">
-  <%= link_to "Budget", user_groups_path(current_user, @group), class: "navbar-brand" %>
+  <%= link_to user_groups_path(current_user, @group) do %>
+   <%= image_tag "https://res.cloudinary.com/wonderwoman/image/upload/v1672258596/myportfolio/kamzzy-budget/budget-logo_nfgynw.png", class: "navbar-brand" %>
+  <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
