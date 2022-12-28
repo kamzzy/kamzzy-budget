@@ -77,9 +77,15 @@ body {
   padding: 5%;
 }
 
-.group-edit {
+.group-span {
   display: flex;
   justify-content: flex-end;
+  padding: 0 2%;
+}
+
+.group-edit {
+  padding: 0 2%;
+  font-size: 20px;
 }
 
 .group-edit a {
@@ -88,6 +94,15 @@ body {
   font-style: italic;
   font-weight: bold;
 }
+
+.group-del button {
+  border: none;
+  background-color: #03264e;
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .new-form {
   display: flex;
   justify-content: center;
@@ -245,4 +260,9 @@ body {
 .profile li button:hover {
   color: #03264e !important;
   background-color: #fff !important;
+}
+
+.group-del {
+  display: flex;
+  justify-content: flex-end;
 }

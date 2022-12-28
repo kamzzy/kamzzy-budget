@@ -38,10 +38,11 @@ class ExpendituresController < ApplicationController
 
   # DELETE /expenditures/1 or /expenditures/1.json
   def destroy
+    @expenditure = Expenditure.find(params[:id])
     @expenditure.destroy
 
     respond_to do |format|
-      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully destroyed.' }
+      format.html { redirect_to user_groups_path, notice: 'Expenditure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -61,6 +62,7 @@ class ExpendituresController < ApplicationController
       end
     end
   end
+
   private
 
   # Only allow a list of trusted parameters through.

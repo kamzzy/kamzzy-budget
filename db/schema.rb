@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_21_133803) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_20_141727) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,19 +18,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_133803) do
     t.bigint "user_id", null: false
     t.string "name"
     t.integer "amount"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "group_id"
     t.index ["user_id"], name: "index_expenditures_on_user_id"
   end
 
-  create_table "group_expenditures", id: false, force: :cascade do |t|
+  create_table "expenditures_groups", id: false, force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "expenditure_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["expenditure_id"], name: "index_group_expenditures_on_expenditure_id"
-    t.index ["group_id"], name: "index_group_expenditures_on_group_id"
+    t.index ["expenditure_id"], name: "index_expenditures_groups_on_expenditure_id"
+    t.index ["group_id"], name: "index_expenditures_groups_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_133803) do
   end
 
   add_foreign_key "expenditures", "users"
-  add_foreign_key "group_expenditures", "expenditures"
-  add_foreign_key "group_expenditures", "groups"
+  add_foreign_key "expenditures_groups", "expenditures"
+  add_foreign_key "expenditures_groups", "groups"
   add_foreign_key "groups", "users"
 end

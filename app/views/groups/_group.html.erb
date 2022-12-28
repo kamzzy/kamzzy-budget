@@ -9,6 +9,9 @@
   <div class="group-amount col">
   <%= total_amount_helper(Expenditure.all.where(group_id: group.id)) %>
   </div>
-  <span class="group-edit"><%= link_to "Edit Category", edit_user_group_path(id: group.id, user_id: group.user_id) %> </span>
+  <div class="group-span">
+  <span class="group-edit"><%= link_to "Edit", edit_user_group_path(id: group.id, user_id: group.user_id) %> </span>
+  <span class="group-del"><%= button_to 'Delete', user_group_path(id: group.id, user_id: group.user_id), method: :delete, data: { confirm: "Are you sure?" } %></span>
+ </div>
 </div>
 </div>

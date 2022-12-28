@@ -4,9 +4,11 @@
 <div class="expense-list row">
   <h4 class="expense-name col-6"><%= expenditure.name %></h4>
   <h4 class="expense-amount col-6"><%= number_to_currency(expenditure.amount) %></h4> 
+  <div class="group-span">
    <span class="group-edit">
-   <%= link_to "Edit Expense", edit_user_expenditure_path(id: expenditure.id, user_id: expenditure.user_id) %></span>
-
+   <%= link_to "Edit", edit_user_expenditure_path(id: expenditure.id, user_id: expenditure.user_id) %></span>
+  <span class="group-del"><%= button_to 'Delete', user_expenditure_path(id: expenditure.id, user_id: expenditure.user_id), method: :delete, data: { confirm: "Are you sure?" } %></span>
+  </div>
 </div>
 </div>
 </div>

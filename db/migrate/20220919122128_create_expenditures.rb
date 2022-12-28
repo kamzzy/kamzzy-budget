@@ -4,6 +4,7 @@ class CreateExpenditures < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true, index: true
       name = t.string :name
       amount = t.integer :amount
+      group_id = t.integer :group_id
 
       t.timestamps
     end
