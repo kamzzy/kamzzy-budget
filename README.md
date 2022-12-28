@@ -2,7 +2,7 @@
 > An application that make it easy for you to keep track of your expenditures and plan your finances better.
 
  ***
-### [Deployed version](https://arcane-mountain-22736.herokuapp.com/)
+### [Deployed version](https://kamzzybudget.onrender.com)
 ### [Demo](https://www.loom.com/share/264e6dfc03ec4d6ba608c6d549331072)
 ## Built With
 > Ruby
